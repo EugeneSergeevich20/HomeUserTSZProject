@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleProject.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <title>Страница авторизации</title>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <form th:action="@{/login}" method="post">
+                <img class="logo1" src="./Img/logo.jpg">
+                <span class="loginUser">
+                        Вход в личный кабинет
+                    </span>
+                <div>
+                    <div>
+                        <input class="inputLoginUser" type="text" placeholder="Логин"
+                            name="username">
+                    </div>
+                    <div>
+                        <input class="inputLoginUser" style="margin-top: 74px" type="password" placeholder="Пароль"
+                            name="password">
+                    </div>
+                </div>
+                <div>
+                    <input style="margin-top: 74px" class="buttonLoginUser" type="submit" value="Sign In"
+                        th:action="@{/home}"/>
+                </div>
+                <div>
+                    <a href="registration.html">
+                            <span style="margin-top: 74px" class="textLoginUser1">
+                                Регистрация
+                            </span>
+                    </a>
+                </div>
+                <hr style="margin-top: 74px" class="hrLoginUser">
+                <div>
+                        <span style="margin-top: 74px" class="textLoginUser2" href="">
+                            Служба поддержки
+                        </span>
+                </div>
+                <img style="margin-top: 74px" class="img1" src="./Img/appStore.jpg">
+                <img style="margin-top: 74px" class="img2" src="./Img/googlePlay.jpg">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

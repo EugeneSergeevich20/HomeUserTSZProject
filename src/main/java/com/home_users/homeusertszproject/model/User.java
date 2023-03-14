@@ -2,6 +2,8 @@ package com.home_users.homeusertszproject.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -16,9 +18,15 @@ public class User {
     @Column(name = "password")
     public String password;
 
-    @OneToOne (cascade= CascadeType.ALL)
-    @JoinColumn(name = "client_id")
+    @Column(name = "active")
+    public boolean active;
+
+    @OneToOne (mappedBy = "user", cascade = CascadeType.ALL)
     public Client client;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    public Set<Role> roles;
 
     public User(){}
 

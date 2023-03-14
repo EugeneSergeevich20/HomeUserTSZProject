@@ -25,7 +25,8 @@ public class Client {
     @Column(name = "patronymic")
     public String patronymic;
 
-    @OneToOne(mappedBy = "client")
+    @OneToOne (cascade= CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     public User user;
 
     public Client(){}
