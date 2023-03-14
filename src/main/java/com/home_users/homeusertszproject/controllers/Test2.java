@@ -1,4 +1,4 @@
 package com.home_users.homeusertszproject.controllers;
 
-public class Test {
+public class Test2 {
 }
