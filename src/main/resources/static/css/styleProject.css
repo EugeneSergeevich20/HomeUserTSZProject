@@ -1,0 +1,383 @@
+/*Убрать полосу прокрутки у элемента*/
+.element::-webkit-scrollbar {
+    width: 0;
+}
+  
+/*Убрать полосу прокрутки для всей страницы*/
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+body {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 1440px;
+}
+
+/*Страница регистарции и авториции*/
+
+.logo1 {
+    /* Вход при авторизации, регистрации */
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    left: 620px;
+    top: 200px;
+
+    background: url(лого.jpg);
+}
+
+.logoMin1 {
+    /* Логотип на всех страницах */
+    position: absolute;
+    width: 80px;
+    height: 56px;
+    left: 152px;
+    top: 12px;
+
+    background: url(лого.jpg);
+}
+
+/* Вход в личный кабинет */
+.loginUser{
+    position: absolute;
+    width: 380px;
+    height: 48px;
+    left: 530px;
+    top: 380px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 48px;
+    text-align: center;
+
+    /* Text_01 */
+    color: #212121;
+}
+
+.inputLoginUser {
+    /* Rectangle 11 */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 380px;
+    height: 52px;
+    left: 530px;
+    top: 472px;
+
+    /* Borders */
+    border: 1px solid #E4DCD3;
+    border-radius: 4px;
+
+    /* Номер телефона */
+    padding-left: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    /* Text_02 */
+    color: #666666;
+}
+
+.buttonLoginUser {
+    /* Rectangle 11 */
+    position: absolute;
+    width: 380px;
+    height: 56px;
+    left: 530px;
+    top: 548px;
+
+    /* blue_main */
+    background: #004F9E;
+    border-radius: 4px;
+    border-color: #FFFFFF;
+
+    /* Далее */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.hrLoginUser{
+    /* line */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 380px;
+    height: 1px;
+    left: 530px;
+    top: 672px;
+
+    /* gray-300 */
+
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+}
+
+.textLoginUser1{
+    /* Демо-режим */
+    position: absolute;
+    width: 115px;
+    height: 24px;
+    left: 663px;
+    top: 628px;
+
+    font-family: 'Montserrat';
+    font-style: initial;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+
+    /* blue_main */
+    color: #004F9E;
+}
+
+.textLoginUser2{
+    /* Служба поддержки */
+    position: absolute;
+    height: 24px;
+    left: 640px;
+    top: 693px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+
+    /* blue_main */
+    color: #004F9E;
+
+    display: inline;
+    border-bottom: 1px solid #004F9E;
+}
+
+.img1{
+    position: absolute;
+    width: 96px;
+    height: 32px;
+    left: 616px;
+    top: 745px;
+    opacity: 0.8;
+    padding-bottom: 200px
+}
+
+.img2{
+    position: absolute;
+    width: 108px;
+    height: 32px;
+    left: 716px;
+    top: 745px;
+    padding-bottom: 200px
+}
+
+.imgAva{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1075px;
+    top: 20px;
+}
+
+.textNumber {
+    position: absolute;
+    width: 109px;
+    height: 16px;
+    left: 1119px;
+    top: 32px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    
+    /* Text_01 */
+    color: #212121;
+}
+
+                                                /*Все икноки*/
+
+.materialSymbolsOutlined {
+    position: absolute;
+    height:16px;
+    
+    left: 1272.47px;
+    top: 32px;
+}
+
+.materialSymbols {
+    height: 40px;
+    width: 40px;
+    position: left;
+}
+
+
+
+
+.titlePage{
+    /* Показания */ 
+    position: relative;
+    width: 173px;
+    height: 36px;
+    left: 152px;
+    top: 120px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+
+    /* Text_01 */
+    color: #212121;
+}
+
+
+.navigationBar  {
+    /* Navbar - меню нашего сайта */
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background-color: #FFFFFF;
+
+    /* Shadow header */
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#menu {
+    padding-left: 332px;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+#menu li {
+    float: left;
+    margin-right: 3%;
+}
+
+#menu li a {
+    /* Начисления */
+    float: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    /* Text_01 */
+    color: #212121;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menu li a:hover {
+    /*font-weight: 500;*/
+    color: #004F9E;
+}
+
+.informText{
+    /* Подать показания */
+    position: absolute;
+    height: 36px;
+    top: 204px;
+
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 36px;
+
+    color: #666666;
+}
+
+.informText:hover {
+    color: #004F9E;
+    display: inline;
+    border-bottom: 1px solid #004F9E;
+}
+
+.inputSubmissionOfIndicators {
+    /* Rectangle 11 */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 192px;
+    height: 48px;
+    top: 328px;
+
+    /* Borders */
+    border: 1px solid #E4DCD3;
+    border-radius: 4px;
+
+    /*Text*/
+    font-family: 'Montserrat';
+    font-weight: bolder;
+    font-style: normal;
+    padding-left: 20px;
+}
+
+.textSubmissionOfIndicators{
+    /* Улица */
+    position: absolute;
+    width: 53px;
+    height: 24px;
+    top: 288px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    /* Text_01 */
+    color: #212121;
+}
+
+.costData{
+    /* Rectangle 8 */
+    width: 254px;
+    height: 84px;
+    top: 480px;
+
+    /* gray */
+    background: #F5F5F5;
+    display: flex;
+    margin: 360px 60px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    flex: 5%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
