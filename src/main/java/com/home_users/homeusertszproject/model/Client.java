@@ -3,11 +3,11 @@ package com.home_users.homeusertszproject.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "client")
+@Table(name = "client_tb")
 public class Client {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "client_id")
     public int id;
 
     @Column(name = "phone")
@@ -26,7 +26,7 @@ public class Client {
     public String patronymic;
 
     @OneToOne (cascade= CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_client_id")
     public User user;
 
     public Client(){}

@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_tb")
 public class User {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "user_id")
     public int id;
 
     @Column(name = "login")
@@ -25,7 +25,7 @@ public class User {
     public Client client;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_client_id"))
     public Set<Role> roles;
 
     public User(){}

@@ -1,191 +1,200 @@
-/*Убрать полосу прокрутки у элемента*/
 .element::-webkit-scrollbar {
     width: 0;
-}
-  
-/*Убрать полосу прокрутки для всей страницы*/
+} 
 ::-webkit-scrollbar {
     width: 0;
 }
-
-
-
 body {
+    max-width: 1440px;
+    height: 1024px;
     position: relative;
     background: #FFFFFF;
-    max-width: 1440px;
 }
 
-/*Страница регистарции и авториции*/
+.containerRegister{
+    width: 500px;
+    display: block;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
 .logo1 {
-    /* Вход при авторизации, регистрации */
-    position: absolute;
+    justify-content: center;
     width: 200px;
     height: 140px;
-    left: 620px;
-    top: 200px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
 
     background: url(лого.jpg);
 }
 
-.logoMin1 {
-    /* Логотип на всех страницах */
-    position: absolute;
-    width: 80px;
-    height: 56px;
-    left: 152px;
-    top: 12px;
-
-    background: url(лого.jpg);
-}
-
-/* Вход в личный кабинет */
 .loginUser{
-    position: absolute;
-    width: 380px;
-    height: 48px;
-    left: 530px;
-    top: 380px;
-
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 1000;
     font-size: 28px;
     line-height: 48px;
-    text-align: center;
-
-    /* Text_01 */
     color: #212121;
 }
 
-.inputLoginUser {
-    /* Rectangle 11 */
-    box-sizing: border-box;
+.listOfElements {
+    margin-top: 40px;
+    text-align: center;
+    list-style-type: none;
+    overflow: hidden;
+}
 
-    position: absolute;
+.inputLoginUser {
+    box-sizing: border-box;
+    margin-top: 24px;
+    float: center;
+
     width: 380px;
     height: 52px;
-    left: 530px;
-    top: 472px;
-
-    /* Borders */
     border: 1px solid #E4DCD3;
     border-radius: 4px;
 
-    /* Номер телефона */
     padding-left: 20px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height, or 143% */
-    
-    /* Text_02 */
     color: #666666;
 }
 
 .buttonLoginUser {
-    /* Rectangle 11 */
-    position: absolute;
     width: 380px;
     height: 56px;
-    left: 530px;
-    top: 548px;
+    margin-top: 44px;
 
-    /* blue_main */
     background: #004F9E;
     border-radius: 4px;
     border-color: #FFFFFF;
 
-    /* Далее */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
     text-align: center;
-
     color: #FFFFFF;
 }
 
-.hrLoginUser{
-    /* line */
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 380px;
-    height: 1px;
-    left: 530px;
-    top: 672px;
-
-    /* gray-300 */
-
-    border: 1px solid #E0E0E0;
-    border-radius: 3px;
+.additionalWidget {
+    width: 400px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .textLoginUser1{
-    /* Демо-режим */
-    position: absolute;
     width: 115px;
     height: 24px;
-    left: 663px;
-    top: 628px;
+    margin-top: 120px;
 
     font-family: 'Montserrat';
     font-style: initial;
     font-weight: bold;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
     text-align: center;
 
-    /* blue_main */
     color: #004F9E;
 }
 
+.hrLoginUser{
+    box-sizing: border-box;
+    height: 1px;
+
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+}
+
 .textLoginUser2{
-    /* Служба поддержки */
-    position: absolute;
     height: 24px;
-    left: 640px;
-    top: 693px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
     text-align: center;
 
-    /* blue_main */
     color: #004F9E;
-
     display: inline;
     border-bottom: 1px solid #004F9E;
 }
 
-.img1{
-    position: absolute;
-    width: 96px;
+.imgIconsOnTheAppStore{
+    width: 98px;
     height: 32px;
-    left: 616px;
-    top: 745px;
     opacity: 0.8;
-    padding-bottom: 200px
 }
 
-.img2{
+
+
+.navigationBar  {
+    margin-top: -28px;
     position: absolute;
-    width: 108px;
-    height: 32px;
-    left: 716px;
-    top: 745px;
-    padding-bottom: 200px
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.logoMini {
+    position: absolute;
+    width: 80px;
+    height: 56px;
+    left: 152px;
+    top: 12px;
+}
+
+#menu {
+    padding-left: 332px;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+#menu li {
+    float: left;
+    margin-right: 3%;
+}
+
+#menu li a {
+    float: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #212121;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#menu li a:hover {
+    color: #004F9E;
 }
 
 .imgAva{
@@ -209,11 +218,8 @@ body {
     font-size: 12px;
     line-height: 16px;
     
-    /* Text_01 */
     color: #212121;
 }
-
-                                                /*Все икноки*/
 
 .materialSymbolsOutlined {
     position: absolute;
@@ -223,17 +229,7 @@ body {
     top: 32px;
 }
 
-.materialSymbols {
-    height: 40px;
-    width: 40px;
-    position: left;
-}
-
-
-
-
 .titlePage{
-    /* Показания */ 
     position: relative;
     width: 173px;
     height: 36px;
@@ -246,65 +242,10 @@ body {
     font-size: 30px;
     line-height: 36px;
 
-    /* Text_01 */
     color: #212121;
-}
-
-
-.navigationBar  {
-    /* Navbar - меню нашего сайта */
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    left: 0px;
-    top: 0px;
-    background-color: #FFFFFF;
-
-    /* Shadow header */
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-#menu {
-    padding-left: 332px;
-    list-style-type: none;
-    overflow: hidden;
-}
-
-#menu li {
-    float: left;
-    margin-right: 3%;
-}
-
-#menu li a {
-    /* Начисления */
-    float: left;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 16px;
-
-    font-weight: bold;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    /* Text_01 */
-    color: #212121;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-/* Change the link color to #111 (black) on hover */
-#menu li a:hover {
-    /*font-weight: 500;*/
-    color: #004F9E;
 }
 
 .informText{
-    /* Подать показания */
     position: absolute;
     height: 36px;
     top: 204px;
@@ -324,8 +265,9 @@ body {
     border-bottom: 1px solid #004F9E;
 }
 
+
+
 .inputSubmissionOfIndicators {
-    /* Rectangle 11 */
     box-sizing: border-box;
 
     position: absolute;
@@ -333,11 +275,9 @@ body {
     height: 48px;
     top: 328px;
 
-    /* Borders */
     border: 1px solid #E4DCD3;
     border-radius: 4px;
 
-    /*Text*/
     font-family: 'Montserrat';
     font-weight: bolder;
     font-style: normal;
@@ -345,7 +285,6 @@ body {
 }
 
 .textSubmissionOfIndicators{
-    /* Улица */
     position: absolute;
     width: 53px;
     height: 24px;
@@ -357,17 +296,14 @@ body {
     font-size: 16px;
     line-height: 24px;
 
-    /* Text_01 */
     color: #212121;
 }
 
 .costData{
-    /* Rectangle 8 */
     width: 254px;
     height: 84px;
     top: 480px;
 
-    /* gray */
     background: #F5F5F5;
     display: flex;
     margin: 360px 60px;
@@ -380,4 +316,180 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.materialSymbols {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 24px;
+}
+
+.costContain{
+    position: absolute;
+    width: 254px;
+    height: 84px;
+    left: 152px;
+    top: 464px;
+
+    background: #F5F5F5;
+    border-radius: 4px;
+}
+
+#textContain h6 {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 72px;
+    margin-bottom: 48px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #212121;
+}
+
+#textContain p {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 72px;
+    margin-bottom: 20px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    
+    color: #212121;
+}
+
+.buttonTestimory {
+    box-sizing: border-box;
+    position: absolute;
+    width: 174px;
+    height: 44px;
+    left: 152px;
+    top: 576px;
+
+    border: 1px solid #004F9E;
+    border-radius: 4px;
+}
+
+.textButtonTestimory {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #004F9E;
+}
+
+.h3Testimory {
+    position: absolute;
+    width: 112px;
+    height: 24px;
+    left: 152px;
+    top: 664px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    
+    color: #212121;
+}
+
+.inputTestimory {
+    box-sizing: border-box;
+    position: absolute;
+    width: 352px;
+    height: 48px;
+    left: 152px;
+    top: 704px;
+
+    border: 1px solid #E4DCD3;
+    border-radius: 4px;
+    color: #666666;
+}
+
+.buttonTestimoryTwo {
+    position: absolute;
+    width: 300px;
+    height: 56px;
+    left: 152px;
+    top: 812px;
+    
+    background: #004F9E;
+    border-radius: 4px;
+    border-style: none;
+}
+
+.textButtonTestimoryTwo {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.hrAccruals{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1136px;
+    height: 1px;
+    left: 152px;
+    top: 292px;
+
+    border: 1px solid #E4DCD3;
+    border-radius: 3px;
+}
+
+#tableAccruals table {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+    text-align: center;
+
+    position: absolute;
+    width: 1136px;
+    height: 72px;
+    left: 152px;
+    top: 340px;
+    }
+#tableAccruals table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #d8d8d8;
+	font-size: 14px;
+}
+#tableAccruals table thead tr th:first-child {
+	border-radius: 8px 0 0 8px;
+}
+#tableAccruals table thead tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+#tableAccruals table tbody td {
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+#tableAccruals table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+#tableAccruals table tbody tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+#tableAccruals table tbody tr td:last-child {
+	border-radius: 0 8px 8px 0;
 }
