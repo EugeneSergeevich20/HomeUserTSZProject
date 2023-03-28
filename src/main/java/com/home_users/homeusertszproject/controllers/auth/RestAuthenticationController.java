@@ -24,16 +24,18 @@ public class RestAuthenticationController {
     }
 
     @PostMapping("/register")
-    public ModelAndView addNewUser(@ModelAttribute("clientRegister") Client client){
+    public ModelAndView addNewClient(@ModelAttribute("clientRegister") Client client){
         System.out.println("register");
         serviceClient.addClient(client);
         return new ModelAndView("auth/login");
     }
 
-    /*@GetMapping("/home")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String getIndex(){
-        return "page/index";
-    }*/
+    @PostMapping("/login")
+    public String loginClient(){
+        System.out.println("==========================================================");
+        System.out.println("\t\t\t\t\tClient is login");
+        System.out.println("==========================================================");
+        return "Client is login";
+    }
 
 }

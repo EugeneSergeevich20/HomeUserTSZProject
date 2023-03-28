@@ -15,6 +15,7 @@ public class UserDetailsImpl implements UserDetails {
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
+    private User userDetails;
 
     public UserDetailsImpl(User user) {
         username = user.getLogin();
@@ -22,6 +23,15 @@ public class UserDetailsImpl implements UserDetails {
         authorities= Arrays.stream(user.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
+        userDetails = user;
+    }
+
+    /**
+     * Получение аутентифицированного пользователя
+     * @return
+     */
+    public User getUser(){
+        return userDetails;
     }
 
     @Override

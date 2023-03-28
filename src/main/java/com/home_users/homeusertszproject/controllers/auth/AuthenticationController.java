@@ -1,22 +1,26 @@
 package com.home_users.homeusertszproject.controllers.auth;
 
+import com.home_users.homeusertszproject.dto.ClientService;
+import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
 import com.home_users.homeusertszproject.model.Client;
-import com.home_users.homeusertszproject.model.User;
+import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/auth")
 public class AuthenticationController {
 
     @Autowired
-    private UserService service;
+    private UserService serviceUser;
+    @Autowired
+    private ClientService serviceClient;
+    @Autowired
+    private ServiceHelper serviceHelper;
 
     @GetMapping("/login")
     public String getPage() {
@@ -24,14 +28,29 @@ public class AuthenticationController {
     }
 
     @GetMapping("/home")
-    public String getIndex(){
-        return "auth/home";
+    public String getIndex(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("client", client);
+
+        return "home";
     }
 
+
+    @GetMapping("/profile")
+    public String getProfile(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("clientDetails", client);
+
+        return "profile/profile";
+    }
+
+    /**
+     * Маппинг регистрации клиента
+     * @param model
+     * @return
+     */
     @GetMapping("/register")
-    public String registerUser(Model model){
-        /*User user = new User();
-        model.addAttribute("user", user);*/
+    public String registerClient(Model model){
         Client client = new Client();
         model.addAttribute("clientRegister", client);
         return "auth/register";

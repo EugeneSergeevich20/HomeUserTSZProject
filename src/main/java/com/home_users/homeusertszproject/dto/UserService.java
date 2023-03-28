@@ -1,10 +1,13 @@
 package com.home_users.homeusertszproject.dto;
 
+import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
 import com.home_users.homeusertszproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -23,5 +26,6 @@ public class UserService {
         repository.save(user);
         return user;
     }
+
 
 }

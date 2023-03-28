@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,18 +15,18 @@
         <img class="logoMini" src="/Img/logo.jpg">
         <ul id="menu">
             <li><a href="./theAccrualsPage.html">Начисления</a></li>
-            <li><a href="./home.html">Показания</a></li>
+            <li><a th:href="@{/auth/home}">Показания</a></li>
             <li><a href="./theApplicationsPage.html">Заявки</a></li>
             <li><a href="./theServicesPage.html">Услуги</a></li>
             <li><a href="./theNewsPage.html">Новости</a></li>
         </ul>
-        <a href="./theProfilePage.html"> 
+        <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" href="">
-            8(937)211-00-39
+        <span class="textNumber" th:text="${client.phone}">
+
         </span>
-        <a href="login.html">
+        <a href="auth/login.html">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
     </div>
@@ -35,6 +36,7 @@
             <h1 class="informText" style="left: 152px; width: 156px">Подать показания</h1>
             <h1 class="informText" style="left: 368px; width: 72px">История</h1>
         </div>
+        <!--<h1>Hello <span sec:authentication property="">thymeleaf</span>!</h1>-->
         <table>
             <tr>
                 <td class="textSubmissionOfIndicators" style="left: 152px">Улица</td>

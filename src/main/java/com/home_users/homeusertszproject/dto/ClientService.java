@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ClientService {
 
@@ -17,6 +19,10 @@ public class ClientService {
     @Autowired
     private UserService serviceUser;
 
+    /**
+     * Метод добавление/регистрации пользователя/клинта
+     * @param client
+     */
     public void addClient(Client client) {
         //var user = new User();
         var clientNew = Client.builder()
@@ -32,6 +38,16 @@ public class ClientService {
                         .build())
                 .build();
         repository.save(clientNew);
+    }
+
+    /**
+     * Получение клиента по пользователю
+     * @param user
+     * @return
+     */
+    public Client getClient(User user){
+        Client client = repository.findClientByUser(user);
+        return client;
     }
 
 }
