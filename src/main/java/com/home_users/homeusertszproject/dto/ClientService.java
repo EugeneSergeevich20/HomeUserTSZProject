@@ -1,5 +1,6 @@
 package com.home_users.homeusertszproject.dto;
 
+import com.home_users.homeusertszproject.model.Address;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
 import com.home_users.homeusertszproject.repository.ClientRepository;
@@ -18,6 +19,8 @@ public class ClientService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UserService serviceUser;
+    @Autowired
+    private AddressService addressService;
 
     /**
      * Метод добавление/регистрации пользователя/клинта
@@ -48,6 +51,25 @@ public class ClientService {
     public Client getClient(User user){
         Client client = repository.findClientByUser(user);
         return client;
+    }
+
+    public void updateClient(Client clientAuth, Client clientUpdate){
+        Client clientNew = repository.findClientById(clientAuth.getId());
+
+        if (clientNew.getAddress() == null){
+            /*clientNew.setAddress(Address.builder()
+                    .city(clientUpdate.getAddress().getCity())
+                    .street(clientUpdate.getAddress().getStreet())
+                    .numberHouse(clientUpdate.getAddress().getNumberHouse())
+                    .corpus(clientUpdate.getAddress().getCorpus())
+                    .flat(clientUpdate.getAddress().getFlat())
+                    .client(clientNew)
+                    .build());*/
+            clientNew.setAddress(addressService.createAddress(clientUpdate));
+            clientNew.getAddress().setClient(clientNew);
+        }
+
+        repository.save(clientNew);
     }
 
 }

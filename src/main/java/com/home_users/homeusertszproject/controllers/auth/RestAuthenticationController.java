@@ -1,11 +1,13 @@
 package com.home_users.homeusertszproject.controllers.auth;
 
 import com.home_users.homeusertszproject.dto.ClientService;
+import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +19,8 @@ public class RestAuthenticationController {
     private UserService serviceUser;
     @Autowired
     private ClientService serviceClient;
+    @Autowired
+    private ServiceHelper serviceHelper;
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -28,6 +32,14 @@ public class RestAuthenticationController {
         System.out.println("register");
         serviceClient.addClient(client);
         return new ModelAndView("auth/login");
+    }
+
+    @PostMapping("/profile/update")
+    public ModelAndView getProfileUpdate(Authentication authentication,
+                                         @ModelAttribute("clientDetails") Client client){
+        Client clientAuth = serviceHelper.getClient(authentication);
+        serviceClient.updateClient(clientAuth, client);
+        return new ModelAndView("profile/profile");
     }
 
     @PostMapping("/login")

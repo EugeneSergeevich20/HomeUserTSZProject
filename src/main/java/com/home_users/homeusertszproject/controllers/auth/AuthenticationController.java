@@ -3,6 +3,7 @@ package com.home_users.homeusertszproject.controllers.auth;
 import com.home_users.homeusertszproject.dto.ClientService;
 import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
+import com.home_users.homeusertszproject.model.Address;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
