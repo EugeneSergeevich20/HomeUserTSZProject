@@ -14,13 +14,14 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void addUser(User userInfo) {
+    public User addUser(User userInfo) {
         var user = User.builder()
                 .login(userInfo.getLogin())
                 .password(passwordEncoder.encode(userInfo.getPassword()))
                 .roles("ROLE_USER")
                 .build();
         repository.save(user);
+        return user;
     }
 
 }

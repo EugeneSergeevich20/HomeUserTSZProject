@@ -24,8 +24,8 @@ public class User {
 
     public String password;
 
-    /*@OneToOne (mappedBy = "user", cascade = CascadeType.ALL)
-    public Client client;*/
+    @OneToOne (mappedBy = "user", cascade = CascadeType.ALL)
+    public Client client;
 
     private String roles;
 

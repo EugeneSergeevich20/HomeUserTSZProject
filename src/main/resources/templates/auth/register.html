@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="containerRegister">
-        <form th:action="@{/auth/register}" role="form" method="post" th:object="${user}">
+        <form th:action="@{/auth/register}" role="form" method="post" th:object="${clientRegister}">
             <div>
                 <img class="logo1" src="/Img/logo.jpg">
                 <span class="loginUser">
@@ -19,29 +19,55 @@
                 </span>
             </div>
             <div class="listOfElements">
-                <input class="inputLoginUser" type="text" name="№" placeholder="№ Лицевого счёта">
-                <input class="inputLoginUser" type="text" name="fam" placeholder="Фамилия">
-                <input class="inputLoginUser" type="text" name="tel" placeholder="Имя">
-                <input class="inputLoginUser" type="text" name="tel" placeholder="Отчества">
-                <input class="inputLoginUser" type="text" name="tel" placeholder="Мобильный телефона">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="№ Лицевого счёта"
+                       id="name"
+                       name="name"
+                       >
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Фамилия"
+                       id="surname"
+                       name="surname"
+                       th:field="*{surname}">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Имя"
+                       id="nameClient"
+                       name="nameClient"
+                       th:field="*{name}">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Отчества"
+                       id="patronymic"
+                       name="patronymic"
+                       th:field="*{patronymic}">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Мобильный телефона"
+                       id="phone"
+                       name="phone"
+                       th:field="*{phone}">
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Логин"
-                       id="name"
-                       name="name"
-                       th:field="*{login}">
+                       id="nameUser"
+                       name="nameUser"
+                       th:field="*{user.login}">
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Пароль"
                        id="password"
                        name="password"
-                       th:field="*{password}">
+                       th:field="*{user.password}">
                 <input class="inputLoginUser" type="text" name="tel" placeholder="Подтверждение пароля">
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Электронная почта"
                        id="email"
-                       name="email">
+                       name="email"
+                       th:field="*{email}">
                 <input class="inputLoginUser" type="text" name="tel" placeholder="Адрес">
                 <button class="buttonLoginUser" >
                     Зарегистрироваться

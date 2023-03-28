@@ -1,6 +1,7 @@
 package com.home_users.homeusertszproject.controllers.auth;
 
 import com.home_users.homeusertszproject.dto.UserService;
+import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,8 +30,10 @@ public class AuthenticationController {
 
     @GetMapping("/register")
     public String registerUser(Model model){
-        User user = new User();
-        model.addAttribute("user", user);
+        /*User user = new User();
+        model.addAttribute("user", user);*/
+        Client client = new Client();
+        model.addAttribute("clientRegister", client);
         return "auth/register";
     }
 
