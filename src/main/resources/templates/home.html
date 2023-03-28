@@ -14,18 +14,16 @@
     <div class="navigationBar">
         <img class="logoMini" src="/Img/logo.jpg">
         <ul id="menu">
-            <li><a href="./theAccrualsPage.html">Начисления</a></li>
+            <li><a th:href="@{/auth/accruals}">Начисления</a></li>
             <li><a th:href="@{/auth/home}">Показания</a></li>
-            <li><a href="./theApplicationsPage.html">Заявки</a></li>
-            <li><a href="./theServicesPage.html">Услуги</a></li>
-            <li><a href="./theNewsPage.html">Новости</a></li>
+            <li><a th:href="@{/auth/application}">Заявки</a></li>
+            <li><a th:href="@{/auth/service}">Услуги</a></li>
+            <li><a th:href="@{/auth/news}">Новости</a></li>
         </ul>
         <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" th:text="${client.phone}">
-
-        </span>
+        <span class="textNumber" th:text="${client.phone}"></span>
         <a href="auth/login.html">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>

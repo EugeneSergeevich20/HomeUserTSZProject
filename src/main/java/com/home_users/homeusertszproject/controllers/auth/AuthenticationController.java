@@ -31,7 +31,6 @@ public class AuthenticationController {
     public String getIndex(Authentication authentication, Model model){
         Client client = serviceHelper.getClient(authentication);
         model.addAttribute("client", client);
-
         return "home";
     }
 
@@ -42,6 +41,38 @@ public class AuthenticationController {
         model.addAttribute("clientDetails", client);
 
         return "profile/profile";
+    }
+
+    @GetMapping("/accruals")
+    public String getAccruals(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("client", client);
+
+        return "accruals";
+    }
+
+    @GetMapping("/application")
+    public String getApplication(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("client", client);
+
+        return "application";
+    }
+
+    @GetMapping("/service")
+    public String getService(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("client", client);
+
+        return "service";
+    }
+
+    @GetMapping("/news")
+    public String getNews(Authentication authentication, Model model){
+        Client client = serviceHelper.getClient(authentication);
+        model.addAttribute("client", client);
+
+        return "news/news";
     }
 
     /**

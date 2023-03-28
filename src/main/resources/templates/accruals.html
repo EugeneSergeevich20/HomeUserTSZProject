@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleProject.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Начисления</title>
+</head>
+<body>
+  <div class="navigationBar">
+        <a href="./theProfilePage.html"> 
+            <img class="logoMini" src="/Img/logo.jpg">
+        </a>
+      <ul id="menu">
+          <li><a th:href="@{/auth/accruals}">Начисления</a></li>
+          <li><a th:href="@{/auth/home}">Показания</a></li>
+          <li><a th:href="@{/auth/application}">Заявки</a></li>
+          <li><a th:href="@{/auth/service}">Услуги</a></li>
+          <li><a th:href="@{/auth/news}">Новости</a></li>
+      </ul>
+      <a th:href="@{/auth/profile}">
+          <img class="imgAva" src="/Img/ava.jpg">
+      </a>
+      <span class="textNumber" th:text="${client.phone}"></span>
+        <a href="./authorizationPhoneNumber.html"> 
+            <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
+        </a>
+    </div>
+    <h3 class="titlePage">Начисления</h3>
+    <div>
+        <div>
+            <h1 class="informText" style="left: 152px; width: 36px;">2023</h1>
+            <h1 class="informText" style="left: 220px; width: 40px;">2022</h1>
+            <h1 class="informText" style="left: 292px; width: 36px;">2021</h1>
+        </div>
+        <hr class="hrAccruals">
+        <div id="tableAccruals">
+            <table>
+                <tr>
+                  <th>Дата</th>
+                  <th>Операция</th>
+                  <th>Начислено (без пени)</th>
+                  <th>Оплачено (без пени)</th>
+                  <th>Оплачено пени</th>
+                  <th>Комиссия</th>
+                  <th>Баланс (без пени)</th>
+                  <th>чек</th>
+                </tr>
+                <tr>
+                  <td>30.03.2021</td>
+                  <td>Начислено за март</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>-</td>
+                  <td>20,67₽</td>
+                  <td>0 ₽</td>
+                  <td>
+                    <a href=""> 
+                        <img style="height: 40px; width: 40px;" src="/Img/iconDoc.jpg">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>30.03.2021</td>
+                  <td>Начислено за март</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>-</td>
+                  <td>20,67₽</td>
+                  <td>0 ₽</td>
+                  <td>
+                    <a href=""> 
+                        <img style="height: 40px; width: 40px;" src="/Img/iconDoc.jpg">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>30.03.2021</td>
+                  <td>Начислено за март</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>2 189, 24 ₽</td>
+                  <td>-</td>
+                  <td>20,67₽</td>
+                  <td>0 ₽</td>
+                  <td>
+                      <a href=""> 
+                        <img style="height: 40px; width: 40px;" src="/Img/iconDoc.jpg">
+                      </a>
+                  </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
