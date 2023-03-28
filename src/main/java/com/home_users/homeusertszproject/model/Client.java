@@ -40,5 +40,8 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private List<ApplicationEntity> applicationList;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    private List<Indicators> indicatorsList;
+
 
 }

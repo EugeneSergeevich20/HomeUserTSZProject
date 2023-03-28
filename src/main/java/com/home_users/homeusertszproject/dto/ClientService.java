@@ -1,9 +1,6 @@
 package com.home_users.homeusertszproject.dto;
 
-import com.home_users.homeusertszproject.model.Address;
-import com.home_users.homeusertszproject.model.ApplicationEntity;
-import com.home_users.homeusertszproject.model.Client;
-import com.home_users.homeusertszproject.model.User;
+import com.home_users.homeusertszproject.model.*;
 import com.home_users.homeusertszproject.repository.ApplicationRepository;
 import com.home_users.homeusertszproject.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +24,8 @@ public class ClientService {
     private AddressService addressService;
     @Autowired
     private ApplicationService applicationService;
+    @Autowired
+    private IndicatorsService indicatorsService;
 
     /**
      * Метод добавление/регистрации пользователя/клинта
@@ -85,6 +84,13 @@ public class ClientService {
         List<ApplicationEntity> applicationList = client.getApplicationList();
         applicationList.add(applicationService.create(application, client));
         client.setApplicationList(applicationList);
+        repository.save(client);
+    }
+
+    public void addIndicators(Indicators indicators, Client client){
+        List<Indicators> indicatorsList = client.getIndicatorsList();
+        indicatorsList.add(indicatorsService.create(indicators, client));
+        client.setIndicatorsList(indicatorsList);
         repository.save(client);
     }
 

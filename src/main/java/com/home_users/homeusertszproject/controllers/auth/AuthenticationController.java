@@ -5,6 +5,7 @@ import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
 import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
+import com.home_users.homeusertszproject.model.Indicators;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -28,7 +29,9 @@ public class AuthenticationController {
     @GetMapping("/home")
     public String getIndex(Authentication authentication, Model model){
         Client client = serviceHelper.getClient(authentication);
+        Indicators indicators = new Indicators();
         model.addAttribute("client", client);
+        model.addAttribute("indicatorsNew", indicators);
         return "home";
     }
 

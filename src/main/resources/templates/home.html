@@ -23,7 +23,7 @@
         <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" th:text="${client.phone}"></span>
+        <span class="textNumber" ></span>
         <a href="auth/login.html">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
@@ -51,6 +51,7 @@
         </table>
     </div>     
     <h1 class="textSubmissionOfIndicators" style="width: 81px; left: 152px; top: 424px;">Счетчик</h1>
+    <form th:action="@{/auth/indicators/new}" method="post" th:object="${indicatorsNew}">
     <div class="container">
         <div class="costContain">
             <img class="materialSymbols" src="/Img/waterDropRed.jpg"/>
@@ -80,32 +81,41 @@
                 <p>36 м. куб.</p>
             </div>
         </div>
-        <button class="buttonTestimory">
+        <!--<button class="buttonTestimory">
             <a class="textButtonTestimory">Добавить счётчик</a>
-        </button>
+        </button>-->
+
         <div>
             <div>
                 <h3 class="h3Testimory">Тип счетчика</h3>
-                <select class="inputTestimory">
-                        <option disabled selected>Выберите тип</option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                </select>
+
+                <input class="inputTestimory" type="text" th:field="*{nameIndicators}" >
+                        <!--<option disabled selected>Выберите тип</option>
+                        <option value="Горачая вода"></option>
+                        <option value="Холодная вода"></option>
+                        <option value="Газ"></option>-->
+                </input>
             </div>
             <div>
-                <h3 style="left: 544px;" class="h3Testimory">Предыдущие показания</h3>
-                <input style="left: 544px;" class="inputTestimory" title="Введите показания"></input>
+                <h3 style="left: 544px;" class="h3Testimory">Показания</h3>
+                <input style="left: 544px;"
+                       class="inputTestimory"
+                       title="Введите показания"
+                        type="text"
+                        th:field="*{dataInsert}"></input>
             </div>
             <div>
-                <h3 style="left: 936px;" class="h3Testimory">Текущие показания</h3>
-                <input style="left: 936px;" class="inputTestimory"></input>
+                <h3 style="left: 936px;" class="h3Testimory">Дата показания</h3>
+                <input style="left: 936px;"
+                       class="inputTestimory"
+                       type="text"
+                       th:field="*{date}"></input>
             </div>
         </div>
-        <button class="buttonTestimoryTwo">
-            <a class="textButtonTestimoryTwo">Отправить</a>
-        </button>
-    </div>    
+            <input class="buttonTestimoryTwo" type="submit" value="Отправить">
+
+    </div>
+    </form>
+
 </body>
 </html>

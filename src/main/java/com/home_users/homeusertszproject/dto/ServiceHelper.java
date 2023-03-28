@@ -2,6 +2,7 @@ package com.home_users.homeusertszproject.dto;
 
 import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
+import com.home_users.homeusertszproject.model.Indicators;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,10 @@ public class ServiceHelper {
 
     public void applicationNew(ApplicationEntity application, Client client){
         serviceClient.addApplication(application, client);
+    }
+
+    public void indicatorsNew(Indicators indicators, Client client){
+        serviceClient.addIndicators(indicators, client);
     }
 
 }

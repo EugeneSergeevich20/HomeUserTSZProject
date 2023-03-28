@@ -5,6 +5,7 @@ import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
 import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
+import com.home_users.homeusertszproject.model.Indicators;
 import com.home_users.homeusertszproject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -50,6 +51,14 @@ public class RestAuthenticationController {
         Client clientAuth = serviceHelper.getClient(authentication);
         serviceHelper.applicationNew(application, clientAuth);
         return new ModelAndView("application");
+    }
+
+    @PostMapping("/indicators/new")
+    public ModelAndView indicatorsNew(Authentication authentication,
+                                       @ModelAttribute("indicatorsNew") Indicators indicators){
+        Client clientAuth = serviceHelper.getClient(authentication);
+        serviceHelper.indicatorsNew(indicators, clientAuth);
+        return new ModelAndView("home");
     }
 
     @PostMapping("/login")

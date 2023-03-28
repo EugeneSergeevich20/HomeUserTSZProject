@@ -32,7 +32,7 @@ public class WebSecurityConfig {
                 .authenticated().and()
                 .formLogin()
                 .loginPage("/auth/login")
-                .defaultSuccessUrl("/auth/home", true)
+                .defaultSuccessUrl("/auth/news", true)
                 .permitAll()
                 .and().build();
     }
