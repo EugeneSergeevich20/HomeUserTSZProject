@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +12,13 @@
     <div>
         <div>
             <div>
-                <form class="">
-                    <img class="logo1" src="./Img/logo.jpg">
+                <form class="" th:action="@{/auth/register}" role="form" method="post" th:object="${user}">
+                    <img class="logo1" src="/Img/logo.jpg">
                     <span class="loginUser">
                         Регистрация
                     </span>
                     <div>
-                        <div>
+                        <!--<div>
                             <input class="inputLoginUser" type="text" name="№" placeholder="№ Лицевого счёта">
                         </div>
                         <div>
@@ -32,14 +32,26 @@
                         </div>
                         <div>
                             <input class="inputLoginUser" style="margin-top: 296px" type="text" name="tel" placeholder="Мобильный телефона">
+                        </div>-->
+                        <div>
+                            <input class="inputLoginUser"
+                                   style="margin-top: 370px"
+                                   type="text"
+                                   placeholder="Логин"
+                                   id="login"
+                                   name="login"
+                                   th:field="*{login}">
                         </div>
                         <div>
-                            <input class="inputLoginUser" style="margin-top: 370px" type="text" name="tel" placeholder="Логин">
+                            <input class="inputLoginUser"
+                                   style="margin-top: 444px"
+                                   type="password"
+                                   placeholder="Пароль"
+                                   id="password"
+                                   name="password"
+                                   th:field="*{password}">
                         </div>
-                        <div>
-                            <input class="inputLoginUser" style="margin-top: 444px" type="text" name="tel" placeholder="Пароль">
-                        </div>
-                        <div>
+                        <!--<div>
                             <input class="inputLoginUser" style="margin-top: 518px" type="text" name="tel" placeholder="Подтверждение пароля">
                         </div>
                         <div>
@@ -47,7 +59,7 @@
                         </div>
                         <div>
                             <input class="inputLoginUser" style="margin-top: 666px" type="text" name="tel" placeholder="Адрес">
-                        </div>
+                        </div>-->
                         <div>
                             <button class="buttonLoginUser" style="margin-top: 676px">
                             Далее
@@ -65,8 +77,8 @@
                             </span>
                         </div>
                     </div> 
-                    <img class="img1" src="./Img/appStore.jpg" style="margin-top: 678px">
-                    <img class="img2" src="./Img/googlePlay.jpg" style="margin-top: 678px">
+                    <img class="img1" src="/Img/appStore.jpg" style="margin-top: 678px">
+                    <img class="img2" src="/Img/googlePlay.jpg" style="margin-top: 678px">
                 </form>
             </div>
         </div>

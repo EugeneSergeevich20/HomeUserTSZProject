@@ -2,8 +2,8 @@ package com.home_users.homeusertszproject.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "client_tb")
+/*@Entity
+@Table(name = "client_tb")*/
 public class Client {
 
     @Id

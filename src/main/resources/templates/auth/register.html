@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleProject.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="containerRegister">
+        <form th:action="@{/auth/register}" role="form" method="post" th:object="${user}">
+            <div>
+                <img class="logo1" src="/Img/logo.jpg">
+                <span class="loginUser">
+                    Регистрация
+                </span>
+            </div>
+            <div class="listOfElements">
+                <input class="inputLoginUser" type="text" name="№" placeholder="№ Лицевого счёта">
+                <input class="inputLoginUser" type="text" name="fam" placeholder="Фамилия">
+                <input class="inputLoginUser" type="text" name="tel" placeholder="Имя">
+                <input class="inputLoginUser" type="text" name="tel" placeholder="Отчества">
+                <input class="inputLoginUser" type="text" name="tel" placeholder="Мобильный телефона">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Логин"
+                       id="name"
+                       name="name"
+                       th:field="*{login}">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Пароль"
+                       id="password"
+                       name="password"
+                       th:field="*{password}">
+                <input class="inputLoginUser" type="text" name="tel" placeholder="Подтверждение пароля">
+                <input class="inputLoginUser"
+                       type="text"
+                       placeholder="Электронная почта"
+                       id="email"
+                       name="email">
+                <input class="inputLoginUser" type="text" name="tel" placeholder="Адрес">
+                <button class="buttonLoginUser" >
+                    Зарегистрироваться
+                </button>
+                <div class="additionalWidget">
+                    <div>
+                        <a href="login.html" style="text-decoration: none">
+                            <span class="textLoginUser1">
+                                Авторизоваться
+                            </span>
+                        </a>
+                    </div>
+                    <hr class="hrLoginUser" >
+                    <div>
+                        <span class="textLoginUser2" href="" >
+                            Служба поддержки
+                        </span>
+                    </div>
+                </div> 
+            </div> 
+            <img class="imgIconsOnTheAppStore" src="/Img/appStore.jpg">
+            <img class="imgIconsOnTheAppStore" src="/Img/googlePlay.jpg">
+        </form>
+    </div>      
+</body>
+</html>

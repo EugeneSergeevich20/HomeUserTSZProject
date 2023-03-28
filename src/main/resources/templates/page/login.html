@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="containerRegister">
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/auth/login}" method="post">
         <div>
             <img class="logo1" src="/Img/logo.jpg">
             <span class="loginUser">
@@ -20,10 +20,10 @@
         <div class="listOfElements">
             <input class="inputLoginUser" type="text" placeholder="Логин" name="username">
             <input class="inputLoginUser" type="password" placeholder="Пароль" name="password">
-            <input class="buttonLoginUser" type="submit" value="Sign In" th:href="@{/home}"/>
+            <input class="buttonLoginUser" type="submit" value="Sign In"/>
             <div class="additionalWidget">
                 <div>
-                    <a href="./userRegistration.html" style="text-decoration: none">
+                    <a href="/registration" style="text-decoration: none">
                             <span class="textLoginUser1">
                                 Регистрация
                             </span>
