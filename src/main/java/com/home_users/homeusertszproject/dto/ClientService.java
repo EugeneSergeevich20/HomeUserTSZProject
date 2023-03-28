@@ -1,13 +1,17 @@
 package com.home_users.homeusertszproject.dto;
 
 import com.home_users.homeusertszproject.model.Address;
+import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
+import com.home_users.homeusertszproject.repository.ApplicationRepository;
 import com.home_users.homeusertszproject.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +25,8 @@ public class ClientService {
     private UserService serviceUser;
     @Autowired
     private AddressService addressService;
+    @Autowired
+    private ApplicationService applicationService;
 
     /**
      * Метод добавление/регистрации пользователя/клинта
@@ -57,19 +63,29 @@ public class ClientService {
         Client clientNew = repository.findClientById(clientAuth.getId());
 
         if (clientNew.getAddress() == null){
-            /*clientNew.setAddress(Address.builder()
+            clientNew.setAddress(Address.builder()
                     .city(clientUpdate.getAddress().getCity())
                     .street(clientUpdate.getAddress().getStreet())
                     .numberHouse(clientUpdate.getAddress().getNumberHouse())
                     .corpus(clientUpdate.getAddress().getCorpus())
                     .flat(clientUpdate.getAddress().getFlat())
                     .client(clientNew)
-                    .build());*/
-            clientNew.setAddress(addressService.createAddress(clientUpdate));
-            clientNew.getAddress().setClient(clientNew);
+                    .build());
+            /*clientNew.setAddress(addressService.createAddress(clientUpdate));
+            clientNew.getAddress().setClient(clientNew);*/
         }
 
         repository.save(clientNew);
+    }
+
+    public void addApplication(ApplicationEntity application, Client client){
+        /*if (client.getApplicationList() == null){
+            client.setApplicationList()
+        }*/
+        List<ApplicationEntity> applicationList = client.getApplicationList();
+        applicationList.add(applicationService.create(application, client));
+        client.setApplicationList(applicationList);
+        repository.save(client);
     }
 
 }

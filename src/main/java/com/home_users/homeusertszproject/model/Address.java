@@ -24,7 +24,6 @@ public class Address {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id")
     private Client client;
-    /*@OneToOne (mappedBy = "address", cascade = CascadeType.ALL)
-    private Client client;*/
+
 
 }

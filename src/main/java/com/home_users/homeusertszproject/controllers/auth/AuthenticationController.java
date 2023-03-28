@@ -3,7 +3,7 @@ package com.home_users.homeusertszproject.controllers.auth;
 import com.home_users.homeusertszproject.dto.ClientService;
 import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
-import com.home_users.homeusertszproject.model.Address;
+import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 public class AuthenticationController {
 
-    @Autowired
-    private UserService serviceUser;
-    @Autowired
-    private ClientService serviceClient;
+
     @Autowired
     private ServiceHelper serviceHelper;
 
@@ -55,7 +52,9 @@ public class AuthenticationController {
     @GetMapping("/application")
     public String getApplication(Authentication authentication, Model model){
         Client client = serviceHelper.getClient(authentication);
+        ApplicationEntity application = new ApplicationEntity();
         model.addAttribute("client", client);
+        model.addAttribute("applicationNew", application);
 
         return "application";
     }

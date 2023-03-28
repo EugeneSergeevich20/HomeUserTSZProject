@@ -3,6 +3,7 @@ package com.home_users.homeusertszproject.controllers.auth;
 import com.home_users.homeusertszproject.dto.ClientService;
 import com.home_users.homeusertszproject.dto.ServiceHelper;
 import com.home_users.homeusertszproject.dto.UserService;
+import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class RestAuthenticationController {
     @Autowired
     private ServiceHelper serviceHelper;
 
+
     @GetMapping("/welcome")
     public String welcome() {
         return "Welcome this endpoint is not secure";
@@ -40,6 +42,14 @@ public class RestAuthenticationController {
         Client clientAuth = serviceHelper.getClient(authentication);
         serviceClient.updateClient(clientAuth, client);
         return new ModelAndView("profile/profile");
+    }
+
+    @PostMapping("/application/new")
+    public ModelAndView applicationNew(Authentication authentication,
+                                         @ModelAttribute("applicationNew") ApplicationEntity application){
+        Client clientAuth = serviceHelper.getClient(authentication);
+        serviceHelper.applicationNew(application, clientAuth);
+        return new ModelAndView("application");
     }
 
     @PostMapping("/login")

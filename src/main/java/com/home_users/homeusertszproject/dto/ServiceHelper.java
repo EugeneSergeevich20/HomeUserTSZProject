@@ -1,5 +1,6 @@
 package com.home_users.homeusertszproject.dto;
 
+import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import lombok.Setter;
@@ -15,6 +16,8 @@ public class ServiceHelper {
 
     @Autowired
     private ClientService serviceClient;
+    @Autowired
+    private ApplicationService serviceApplication;
 
     /**
      * Получение аутентифицированного клиента
@@ -24,6 +27,10 @@ public class ServiceHelper {
     public Client getClient(Authentication authentication){
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         return serviceClient.getClient(userDetails.getUser());
+    }
+
+    public void applicationNew(ApplicationEntity application, Client client){
+        serviceClient.addApplication(application, client);
     }
 
 }

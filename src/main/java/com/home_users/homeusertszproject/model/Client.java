@@ -2,6 +2,7 @@ package com.home_users.homeusertszproject.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
 import java.util.Set;
@@ -36,9 +37,8 @@ public class Client {
     @OneToOne (mappedBy = "client", cascade = CascadeType.ALL)
     private Address address;
 
-    /*@OneToOne (cascade= CascadeType.ALL)
-    @JoinColumn(name = "address_id")
-    private Address address;*/
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    private List<ApplicationEntity> applicationList;
 
 
 }
