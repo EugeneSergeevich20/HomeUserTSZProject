@@ -23,8 +23,8 @@
         <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" ></span>
-        <a href="./authorizationPhoneNumber.html"> 
+        <span class="textNumber" th:text="${modelHelper.client.phone}"></span>
+        <a th:href="@{/auth/login}">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
     </div>
@@ -51,54 +51,62 @@
             </div>
         </div>
     </div>-->
-    <form th:action="@{/auth/application/new}" method="post" th:object="${applicationNew}">
+    <form th:action="@{/auth/application/new}" method="post" th:object="${modelHelper}">
     <div class="containerContentBlock">
         <div>
             <div class="containerMainNews">
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Тип заявки</h3>
-                    <input class="inputProfile"
+                    <input style="width: 20%" class="inputProfile"
                            type="text"
                            placeholder="Тип заявки"
                            id="type"
                            name="type"
-                           th:field="*{typeApp}"></input>
+                           th:field="*{applicationEntity.typeApp}"></input>
                 </div>
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Наименование заявки</h3>
-                    <input class="inputProfile"
+                    <input style="width: 20%" class="inputProfile"
                            type="text"
                            placeholder="Наименование заявки"
                            id="name"
                            name="name"
-                           th:field="*{nameApp}"></input>
+                           th:field="*{applicationEntity.nameApp}"></input>
                 </div>
+            </div>
+        </div>
+        <div>
+            <div class="containerMainNews">
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Дата заявки</h3>
-                    <input class="inputProfile"
+                    <input style="width: 20%" class="inputProfile"
                            type="text"
                            placeholder="Дата заявки"
                            id="date"
                            name="date"
-                           th:field="*{dateApp}"></input>
+                           th:field="*{applicationEntity.dateApp}"></input>
                 </div>
                 <div class="container-1-3">
-                    <h3 class="headlineMainNews">Адрксс</h3>
-                    <input class="inputProfile"
+                    <h3 class="headlineMainNews">Адрес</h3>
+                    <input style="width: 20%" class="inputProfile"
                            type="text"
-                           placeholder="Адресс"
+                           placeholder="Адрес"
                            id="address"
                            name="address"
-                           th:field="*{address}"></input>
+                           th:field="*{applicationEntity.address}"></input>
                 </div>
+            </div>
+        </div>
+        <div>
+            <div class="containerMainNews">
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Комментарий</h3>
-                    <input class="inputProfile"
+                    <input style="width: 50%" class="inputProfile"
                            type="text"
                            placeholder="Комментарий"
                            id="desc"
                            name="desc"
-                           th:field="*{description}"></input>
+                           th:field="*{applicationEntity.description}"></input>
                 </div>
                 <input class="buttonTestimoryTwo" type="submit" value="Отправить заявку"/>
             </div>

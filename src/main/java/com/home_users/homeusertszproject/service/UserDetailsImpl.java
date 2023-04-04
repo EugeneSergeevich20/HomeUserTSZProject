@@ -20,7 +20,7 @@ public class UserDetailsImpl implements UserDetails {
     public UserDetailsImpl(User user) {
         username = user.getLogin();
         password = user.getPassword();
-        authorities= Arrays.stream(user.getRoles().split(","))
+        authorities= Arrays.stream(user.getRoles().split(""))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
         userDetails = user;

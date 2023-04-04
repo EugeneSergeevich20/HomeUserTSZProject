@@ -6,6 +6,7 @@ import com.home_users.homeusertszproject.dto.UserService;
 import com.home_users.homeusertszproject.model.ApplicationEntity;
 import com.home_users.homeusertszproject.model.Client;
 import com.home_users.homeusertszproject.model.Indicators;
+import com.home_users.homeusertszproject.model.ModelHelper;
 import com.home_users.homeusertszproject.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,6 +21,8 @@ public class AuthenticationController {
 
     @Autowired
     private ServiceHelper serviceHelper;
+
+    private ModelHelper modelHelper;
 
     @GetMapping("/login")
     public String getPage() {
@@ -37,43 +40,39 @@ public class AuthenticationController {
 
 
     @GetMapping("/profile")
-    public String getProfile(Authentication authentication, Model model){
-        Client client = serviceHelper.getClient(authentication);
-        model.addAttribute("clientDetails", client);
+    public String getProfile(Model model){
+        model.addAttribute("modelHelper", modelHelper);
 
         return "profile/profile";
     }
 
     @GetMapping("/accruals")
-    public String getAccruals(Authentication authentication, Model model){
-        Client client = serviceHelper.getClient(authentication);
-        model.addAttribute("client", client);
+    public String getAccruals(Model model){
+        model.addAttribute("modelHelper", modelHelper);
 
         return "accruals";
     }
 
     @GetMapping("/application")
-    public String getApplication(Authentication authentication, Model model){
-        Client client = serviceHelper.getClient(authentication);
-        ApplicationEntity application = new ApplicationEntity();
-        model.addAttribute("client", client);
-        model.addAttribute("applicationNew", application);
+    public String getApplication(Model model){
+        modelHelper.setApplicationEntity(new ApplicationEntity());
+        model.addAttribute("modelHelper", modelHelper);
 
         return "application";
     }
 
     @GetMapping("/service")
-    public String getService(Authentication authentication, Model model){
-        Client client = serviceHelper.getClient(authentication);
-        model.addAttribute("client", client);
-
+    public String getService(Model model){
+        model.addAttribute("modelHelper", modelHelper);
         return "service";
     }
 
     @GetMapping("/news")
     public String getNews(Authentication authentication, Model model){
         Client client = serviceHelper.getClient(authentication);
-        model.addAttribute("client", client);
+        modelHelper = new ModelHelper();
+        modelHelper.setClient(client);
+        model.addAttribute("modelHelper", modelHelper);
 
         return "news/news";
     }

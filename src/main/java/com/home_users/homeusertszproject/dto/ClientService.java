@@ -37,7 +37,7 @@ public class ClientService {
                 .phone(client.getPhone())
                 .email(client.getEmail())
                 .surname(client.getSurname())
-                .name(client.getName())
+                .globalName(client.getGlobalName())
                 .patronymic(client.getPatronymic())
                 .user(User.builder()
                         .login(client.user.getLogin())
@@ -61,6 +61,7 @@ public class ClientService {
     public void updateClient(Client clientAuth, Client clientUpdate){
         Client clientNew = repository.findClientById(clientAuth.getId());
 
+
         if (clientNew.getAddress() == null){
             clientNew.setAddress(Address.builder()
                     .city(clientUpdate.getAddress().getCity())
@@ -78,9 +79,6 @@ public class ClientService {
     }
 
     public void addApplication(ApplicationEntity application, Client client){
-        /*if (client.getApplicationList() == null){
-            client.setApplicationList()
-        }*/
         List<ApplicationEntity> applicationList = client.getApplicationList();
         applicationList.add(applicationService.create(application, client));
         client.setApplicationList(applicationList);

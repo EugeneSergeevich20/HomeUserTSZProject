@@ -22,8 +22,8 @@
         <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" th:text="${client.phone}"></span>
-        <a href="./authorizationPhoneNumber.html"> 
+        <span class="textNumber" th:text="${modelHelper.client.phone}"></span>
+        <a th:href="@{/auth/login}">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
     </div>

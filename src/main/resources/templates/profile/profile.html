@@ -20,18 +20,19 @@
             <li><a th:href="@{/auth/service}">Услуги</a></li>
             <li><a th:href="@{/auth/news}">Новости</a></li>
         </ul>
-        <a href="./profile.html">
+        <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" th:text="${clientDetails.phone}">
+        <span class="textNumber" th:text="${modelHelper.client.phone}">
         </span>
         <a th:href="@{/auth/login}">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
     </div>
     <h3 class="titlePage">Профиль</h3>
-    <form th:action="@{/auth/profile/update}" method="post" th:object="${clientDetails}">
-    <div class="containerContentBlock">
+    <form th:action="@{/auth/profile/update}" th:method="POST" th:object="${modelHelper}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <div class="containerContentBlock">
         <div>
             <div class="containerMainNews">
                 <div class="container-1-3">
@@ -39,7 +40,7 @@
                     <input class="inputProfile"
                            type="text"
                            id="surname"
-                           th:field="*{surname}"
+                           th:field="*{client.surname}"
                     ></input>
                 </div>
                 <div class="container-1-3">
@@ -47,14 +48,14 @@
                     <input class="inputProfile"
                            type="text"
                            id="name"
-                           th:field="*{name}"></input>
+                           th:field="*{client.globalName}"></input>
                 </div>
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Отчество</h3>
                     <input class="inputProfile"
                            type="text"
                            id="patronymic"
-                           th:field="*{patronymic}"></input>
+                           th:field="*{client.patronymic}"></input>
                 </div>
             </div>
         </div>
@@ -63,32 +64,39 @@
         <div>
             <div class="containerMainNews">
                 <div class="container-1-3">
+                    <h3 class="headlineMainNews">Город</h3>
+                    <input class="inputProfile"
+                           type="text"
+                           id="city"
+                           th:field="*{client.address.city}"></input>
+                </div>
+                <div class="container-1-3">
                     <h3 class="headlineMainNews">Улица</h3>
                     <input class="inputProfile"
                            type="text"
                            id="street"
-                           th:field="*{address.street}"></input>
+                           th:field="*{client.address.street}"></input>
                 </div>
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Дом</h3>
                     <input class="inputProfile"
                            type="text"
                            id="house"
-                           th:field="*{address.numberHouse}"></input>
+                           th:field="*{client.address.numberHouse}"></input>
                 </div>
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Корпус</h3>
                     <input class="inputProfile"
                            type="text"
                            id="corpus"
-                           th:field="*{address.corpus}"></input>
+                           th:field="*{client.address.corpus}"></input>
                 </div>
                 <div class="container-1-3">
                     <h3 class="headlineMainNews">Квартира</h3>
                     <input class="inputProfile"
                            type="text"
                            id="flat"
-                           th:field="*{address.flat}"></input>
+                           th:field="*{client.address.flat}"></input>
                 </div>
             </div>
         </div>
@@ -105,7 +113,7 @@
                     <input class="inputProfile"
                            type="text"
                            id="email"
-                           th:field="*{email}"></input>
+                           th:field="*{client.email}"></input>
                 </div>
             </div>
         </div>

@@ -22,8 +22,8 @@
         <a th:href="@{/auth/profile}">
             <img class="imgAva" src="/Img/ava.jpg">
         </a>
-        <span class="textNumber" th:text="${client.phone}"></span>
-        <a href="./authorizationPhoneNumber.html"> 
+        <span class="textNumber" th:text="${modelHelper.client.phone}"></span>
+        <a th:href="@{/auth/login}">
             <img class="materialSymbolsOutlined" src="/Img/logoOut.png"/>
         </a>
     </header>
@@ -32,92 +32,94 @@
         <div>
             <div class="containerMainNews">
                 <div class="container-1-2">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
                         <img class="imgMainNews" src="/Img/1.jpg">
                     </a>
                 </div>
                 <div class="container-1-2">
                     <h3 class="headlineMainNews">
-                        Гололёд, дороги, вакцинация. Что волновало ульяновцев
+                        Отключение горячей воды в Самаре
                     </h3>
                     <p class="textMainNews">
-                        В тройку лидирующих тем вошли благоустройство – 49 инцидентов, 
-                        социальное обслуживание и соцзащита – 45, дороги – 37 инцидентов. 
-                        Также людей беспокоили вопросы здравоохранения, общественного транспорта, 
-                        ЖКХ, образования, безопасности, экологии и коронавируса. 
+                        Горячую воду летом отключают для подготовки к новому отопительному сезону.
+                        Эти работы направлены на поддержание системы централизованного теплоснабжения в
+                        безаварийном состоянии в холодное время года - с октября по апрель включительно.
                     </p>
                 </div>
             </div>
             <div class="containerNews">
                 <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
                         <img class="imgNews" src="/Img/1.jpg">
                     </a>
                     <h3 class="headlineNews">
-                        21 марта — День работников бытового обслуживания населения и ЖКХ
+                        Отключение горячей воды в Самаре
                     </h3>
                     <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
-                        Поздравляю вас с профессиональным ...
+                        Горячую воду летом отключают для подготовки к новому отопительному сезону.
+                        Эти работы направлены на поддержание системы ...
                     </p>
                 </div>
                 <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
                         <img class="imgNews" src="/Img/2.jpg">
                     </a>
                     <h3 class="headlineNews">
-                        День погоды — День погоды счастья и весны
+                        Цены на газ, электроэнергию, воду в Самаре с 1 декабря 2022 года
                     </h3>
                     <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
-                        Поздравляю вас с профессиональным ...
+                        С 1 декабря 2022 года в Самарской области начали действовать новые тарифы
+                        на коммунальные услуги. Их утвердил региональный департамент ценового
+                        и тарифного регулирования. ...
                     </p>
                 </div>
                 <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
                         <img class="imgNews" src="/Img/3.jpg">
                     </a>
                     <h3 class="headlineNews">
-                        Инопланетяне начали рисовать красные треугольники
+                        В Самаре увеличили цены на холодную воду
                     </h3>
                     <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
-                        Поздравляю вас с профессиональным ...
+                        С декабря 2022 года кубометр холодной воды подорожал с 37,94 рубля
+                        до 41,17 рубля. Тариф на водоотведение вырос с 20,88 рубля до 23,03
+                        рубля, — говорится в документе. ...
                     </p>
                 </div>
                 <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
+                        <img class="imgNews" src="/Img/4.jpg">
+                    </a>
+                    <h3 class="headlineNews">
+                        Вода Крыма: 23 марта в связи с ремонтными работами на сетях будет ограничено водоснабжение
+                    </h3>
+                    <p class="textNews">
+                        Силами филиала будет осуществляться подвоз питьевой воды.
+                        Узнать актуальную информацию по расположению водовозок, а также оставить заявку на
+                        подвоз воды можно по телефону диспетчерской ...
+                    </p>
+                </div>
+                <div class="container-1-4">
+                    <a class="containImgNews" href="">
                         <img class="imgNews" src="/Img/4.jpg">
                     </a>
                     <h3 class="headlineNews">
                         Черный ворон и белый волк
                     </h3>
                     <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
+                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ!
                         Поздравляю вас с профессиональным ...
                     </p>
                 </div>
                 <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
+                    <a class="containImgNews" href="">
                         <img class="imgNews" src="/Img/4.jpg">
                     </a>
                     <h3 class="headlineNews">
                         Черный ворон и белый волк
                     </h3>
                     <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
-                        Поздравляю вас с профессиональным ...
-                    </p>
-                </div>
-                <div class="container-1-4">
-                    <a class="containImgNews" href=""> 
-                        <img class="imgNews" src="/Img/4.jpg">
-                    </a>
-                    <h3 class="headlineNews">
-                        Черный ворон и белый волк
-                    </h3>
-                    <p class="textNews">
-                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ! 
+                        Уважаемые работники сферы бытового обслуживания населения и ЖКХ!
                         Поздравляю вас с профессиональным ...
                     </p>
                 </div>

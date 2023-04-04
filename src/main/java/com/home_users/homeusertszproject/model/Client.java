@@ -1,6 +1,8 @@
 package com.home_users.homeusertszproject.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.springframework.context.annotation.Lazy;
 
@@ -20,14 +22,20 @@ public class Client {
     @GeneratedValue
     private int id;
 
+    @NotEmpty(message = "Введите номер телефона")
     private String phone;
 
+    @NotEmpty(message = " Введите email")
+    @Email
     private String email;
 
+    @NotEmpty(message = "Введите фамилию")
     private String surname;
 
-    private String name;
+    @NotEmpty(message = "Введите имя")
+    private String globalName;
 
+    @NotEmpty(message = "Введите отчество")
     private String patronymic;
 
     @OneToOne (cascade= CascadeType.ALL)

@@ -31,43 +31,50 @@
                        id="surname"
                        name="surname"
                        th:field="*{surname}">
+                <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Name Error</div>
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Имя"
                        id="nameClient"
                        name="nameClient"
-                       th:field="*{name}">
+                       th:field="*{globalName}">
+                <div style="color:red" th:if="${#fields.hasErrors('globalName')}" th:errors="*{globalName}">Name Error</div>
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Отчества"
                        id="patronymic"
                        name="patronymic"
                        th:field="*{patronymic}">
+                <div style="color:red" th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">Name Error</div>
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Мобильный телефона"
                        id="phone"
                        name="phone"
                        th:field="*{phone}">
+                <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Name Error</div>
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Логин"
                        id="nameUser"
                        name="nameUser"
                        th:field="*{user.login}">
+                <div style="color:red" th:if="${#fields.hasErrors('user.login')}" th:errors="*{user.login}">Name Error</div>
                 <input class="inputLoginUser"
-                       type="text"
+                       type="password"
                        placeholder="Пароль"
                        id="password"
                        name="password"
                        th:field="*{user.password}">
-                <input class="inputLoginUser" type="text" name="tel" placeholder="Подтверждение пароля">
+                <div style="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}">Name Error</div>
+                <input class="inputLoginUser" type="password" name="tel" placeholder="Подтверждение пароля">
                 <input class="inputLoginUser"
                        type="text"
                        placeholder="Электронная почта"
                        id="email"
                        name="email"
                        th:field="*{email}">
+                <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</div>
                 <!--<input class="inputLoginUser" type="text" name="tel" placeholder="Адрес">-->
                 <button class="buttonLoginUser" >
                     Зарегистрироваться

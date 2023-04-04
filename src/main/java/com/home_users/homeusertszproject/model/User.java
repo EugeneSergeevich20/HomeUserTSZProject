@@ -1,6 +1,7 @@
 package com.home_users.homeusertszproject.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import java.util.Set;
@@ -18,8 +19,10 @@ public class User {
     @GeneratedValue
     public Integer id;
 
+    @NotEmpty(message = "Введите логин")
     public String login;
 
+    @NotEmpty(message = "Введите пароль")
     public String password;
 
     @OneToOne (mappedBy = "user", cascade = CascadeType.ALL)
